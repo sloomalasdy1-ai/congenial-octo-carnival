@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>حاسبة الجرعات · Dose Calculator</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0f8b6d"><link rel="apple-touch-icon" href="icon-192.png"><title>حاسبة الجرعات · Dose Calculator</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f4f7f6;--card:#fff;--tx:#14231f;--mut:#5f736d;--pri:#0f8b6d;--pri2:#e3f4ef;--bd:#dbe5e2;--dng:#c0392b;--sh:0 1px 3px rgba(0,0,0,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
@@ -237,6 +237,7 @@ $("camBtn").onclick=function(){Cam.on?Cam.stop():Cam.start()};
 
 applyLang();
 Cam.start();
+if("serviceWorker"in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
 </script>
 </body>
 </html>
